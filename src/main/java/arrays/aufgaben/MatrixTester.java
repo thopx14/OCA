@@ -10,7 +10,7 @@ public class MatrixTester {
         IntMatrix m3 = IntMatrix.getRandomMatrix( 4, 6, 200 );
         System.out.println( m3 );
 
-        System.out.println();
+        System.out.println( "==========================================" );
         System.out.printf( "m1.equals(m2) == %s%n", m1.equals( m2 ) );
         IntMatrix m4 = new IntMatrix( 5, 5, 5 );
         IntMatrix m5 = new IntMatrix( 5, 5, 5 );
