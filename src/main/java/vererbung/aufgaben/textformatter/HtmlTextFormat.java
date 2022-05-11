@@ -1,4 +1,4 @@
-package main.java.vererbung.aufgaben;
+package main.java.vererbung.aufgaben.textformatter;
 
 public class HtmlTextFormat extends TextFormat {
 

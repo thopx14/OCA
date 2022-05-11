@@ -1,6 +1,6 @@
-package main.java.vererbung.aufgaben;
+package main.java.vererbung.aufgaben.textformatter;
 
-public class TextTester {
+public class Main {
 
     public static void main( String[] args ) {
         String text = "Heute ist Dienstag";
@@ -17,5 +17,12 @@ public class TextTester {
 
         System.out.println( mdFormat ); // Markdown-Formatter, Text: Freitag
         System.out.println( mdFormat.fett() );  // __Freitag__
+
+        System.out.println( "All registered Formatters:" );
+        for ( TextFormat allRegisteredFormatter : TextFormat.getAllRegisteredFormatters() ) {
+            System.out.println( allRegisteredFormatter.getClass().getSimpleName() );
+        }
+
+        System.out.println( TextFormat.hasHtmlFormatter() );
     }
 }

@@ -36,6 +36,11 @@ public class PersonBuilder {
         return this;
     }
 
+    public PersonBuilder gender( Gender g ) {
+        this.person.setGender( g );
+        return this;
+    }
+
     /*
     Returns the actual Person object!
      */
