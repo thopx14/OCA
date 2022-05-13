@@ -10,7 +10,7 @@ public class BruteforceHeap extends Bruteforce {
             {'1', '2', '3', '4'}
     };
 
-    public BruteforceHeap( Safe safe, Logging logger ) {
+    public BruteforceHeap( Safe safe, Loggable logger ) {
         super( safe, logger );
     }
 

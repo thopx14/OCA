@@ -9,7 +9,7 @@ import java.util.Objects;
 
 public class BruteForceDictionary extends Bruteforce {
 
-    public BruteForceDictionary( Safe safe, Logging logger ) {
+    public BruteForceDictionary( Safe safe, Loggable logger ) {
         super( safe, logger );
     }
 

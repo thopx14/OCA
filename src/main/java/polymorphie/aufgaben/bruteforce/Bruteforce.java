@@ -5,9 +5,9 @@ import java.util.Objects;
 public abstract class Bruteforce {
 
     private Safe safe;
-    private final Logging logger;
+    private final Loggable logger;
 
-    public Bruteforce( Safe safe, Logging logger ) {
+    public Bruteforce( Safe safe, Loggable logger ) {
         this.safe = safe;
         this.logger = logger;
     }
@@ -18,7 +18,7 @@ public abstract class Bruteforce {
         return safe;
     }
 
-    public Logging getLogger() {
+    public Loggable getLogger() {
         return logger;
     }
 

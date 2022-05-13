@@ -11,7 +11,7 @@ public class SimpleBruteForce extends Bruteforce {
             {'s', 'p', 'a', 's'}
     };
 
-    public SimpleBruteForce( Safe safe, Logging logger ) {
+    public SimpleBruteForce( Safe safe, Loggable logger ) {
         super( safe, logger );
     }
 

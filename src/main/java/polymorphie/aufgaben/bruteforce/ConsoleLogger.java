@@ -2,11 +2,10 @@ package main.java.polymorphie.aufgaben.bruteforce;
 
 import java.util.Calendar;
 
-public class ConsoleLogger extends Logging {
-
-    public ConsoleLogger() {
-        super( "ConsoleLogger " );
-    }
+/*
+ConsolerLogger implementiert Loggable und überschreibt alle Methoden.
+ */
+public class ConsoleLogger implements Loggable {
 
     @Override
     public void log( Object loggingClass, String... texts ) {
@@ -16,5 +15,14 @@ public class ConsoleLogger extends Logging {
             sb.append( text );
         }
         System.out.printf( "%1$s:: %2$s: %3$tD: %3$tR ==> %4$s%n", loggingClass.getClass().getSimpleName(), this.getLoggerName(), now, sb );
+    }
+
+    /*
+    Hier wird die default-Methode aus Loggable überschrieben.
+    Die getLoggerName()-Methode muss aber nicht überschrieben werden, weil sie 'default' ist.
+     */
+    @Override
+    public String getLoggerName() {
+        return "ConsoleLogger";
     }
 }
