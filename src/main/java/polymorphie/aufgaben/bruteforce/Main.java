@@ -21,6 +21,9 @@ public class Main {
         Safe safe1 = new Safe( pw1 );
         Safe safe2 = new Safe( pw2 );
         Safe safe3 = new Safe( pw3 );
+        //
+        System.out.println( safe3.password() );
+
         SimpleBruteForce simpleBruteForce = new SimpleBruteForce( safe1, new ConsoleLogger() );
         if ( simpleBruteForce.bruteforce() ) {
             System.out.println( "Found password!" );
