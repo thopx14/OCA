@@ -27,25 +27,27 @@ public class StringConcat {
         SimpleDateFormat sdf = new SimpleDateFormat( "hh:mm:ss:SSS" );
 
         beforeStrConcat = System.currentTimeMillis();
-        beforeStrConcatStr = sdf.format( beforeStrConcat );
 
         for ( int i = 0; i < cycles; i++ ) {
             out += s1 + s2 + s3;
         }
 
         afterStrConcat = System.currentTimeMillis();
+        // Formatting
+        beforeStrConcatStr = sdf.format( beforeStrConcat );
         afterStrConcatStr = sdf.format( afterStrConcat );
 
         StringBuilder sb = new StringBuilder();
 
         beforeSbConcat = System.currentTimeMillis();
-        beforeSbConcatStr = sdf.format( beforeSbConcat );
 
         for ( int i = 0; i < cycles; i++ ) {
             sb.append( s1 ).append( s2 ).append( s3 );
         }
 
         afterSbConcat = System.currentTimeMillis();
+        // Formatting
+        beforeSbConcatStr = sdf.format( beforeSbConcat );
         afterSbConcatStr = sdf.format( afterSbConcat );
 
         System.out.printf( "Results for %d cycles:%n", cycles );
