@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Objects;
+import java.util.StringTokenizer;
 
 public class StringBuilderUndStringBuffer {
     public static void main( String[] args ) throws IOException {
@@ -39,7 +40,17 @@ public class StringBuilderUndStringBuffer {
                 }
             }
         }
-        
+
+        System.out.println( "StringTokenizer:" );
+        System.out.println( "==================" );
+        StringTokenizer tokenizer = new StringTokenizer( passwordList.toString(), "\n" );
+        System.out.printf( "Tokens in passwordList: %d%n", tokenizer.countTokens() );
+        int line = 1;
+        while ( tokenizer.hasMoreTokens() ) {
+            System.out.printf( "%d: %s%n", line++, tokenizer.nextToken() );
+        }
+
+
         System.out.println( "Passwordlist:" );
         System.out.println( "==================" );
         shufflePasswords( passwordList, "=!n/,\\<>;'-\"" );
