@@ -39,7 +39,7 @@ public class StringBuilderUndStringBuffer {
                 }
             }
         }
-//        System.out.println( passwordList );
+        
         System.out.println( "Passwordlist:" );
         System.out.println( "==================" );
         shufflePasswords( passwordList, "=!n/,\\<>;'-\"" );
@@ -48,14 +48,17 @@ public class StringBuilderUndStringBuffer {
 
     // int randomNumber = ( int ) ( from + Math.round( Math.random() * ( to - from ) ) );
     static void shufflePasswords( StringBuilder sb, String exclude ) {
+        char from = '!';
+        char to = '~';
         for ( int i = 0; i < sb.length(); i++ ) {
             // Zeilenumbruch nicht ändern!
             if ( sb.charAt( i ) != '\n' ) {
 
-                char randomChar = ( char ) ( '!' + Math.round( Math.random() * ( '~' - 'A' ) ) );
+                char randomChar = ( char ) ( from + Math.round( Math.random() * ( to - from ) ) );
                 // Sonderzeichen exkludieren. Nur Klein- und Großbuchstaben erzeugen!
                 while ( exclude.contains( String.valueOf( randomChar ) ) ) {
-                    randomChar = ( char ) ( 'A' + Math.round( Math.random() * ( 'z' - 'A' ) ) );
+                    // Nächste Runde...
+                    randomChar = ( char ) ( from + Math.round( Math.random() * ( to - from ) ) );
                 }
                 sb.replace( i, i + 1, String.valueOf( randomChar ) );
             }
