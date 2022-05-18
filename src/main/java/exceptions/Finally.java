@@ -80,7 +80,7 @@ public class Finally {
             xmlStreamWriter = XMLOutputFactory.newInstance().createXMLStreamWriter( printWriter );
             xmlStreamWriter.writeStartDocument();
             xmlStreamWriter.writeStartElement( "persons" );
-            xmlStreamWriter.writeCharacters( "Thomas" );
+            xmlStreamWriter.writeCharacters( "Hugo" );
             xmlStreamWriter.writeEndElement();
 
 
