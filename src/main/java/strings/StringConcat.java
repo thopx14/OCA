@@ -1,6 +1,6 @@
 package main.java.strings;
 
-import java.text.SimpleDateFormat;
+import java.util.concurrent.TimeUnit;
 
 /*
 Testing StringBuilder vs. String concatenation.
@@ -15,51 +15,36 @@ public class StringConcat {
 
         long beforeStrConcat;
         long beforeSbConcat;
+
         long afterStrConcat;
         long afterSbConcat;
-        String beforeStrConcatStr;
-        String beforeSbConcatStr;
-        String afterStrConcatStr;
-        String afterSbConcatStr;
 
-        int cycles = 100_000;
+        int cycles = 10_000;
 
-        SimpleDateFormat sdf = new SimpleDateFormat( "hh:mm:ss:SSS" );
-
-        beforeStrConcat = System.currentTimeMillis();
+        beforeStrConcat = System.nanoTime();
 
         for ( int i = 0; i < cycles; i++ ) {
             out += s1 + s2 + s3;
         }
 
-        afterStrConcat = System.currentTimeMillis();
-        // Formatting
-        beforeStrConcatStr = sdf.format( beforeStrConcat );
-        afterStrConcatStr = sdf.format( afterStrConcat );
+        afterStrConcat = System.nanoTime();
 
         StringBuilder sb = new StringBuilder();
 
-        beforeSbConcat = System.currentTimeMillis();
+        beforeSbConcat = System.nanoTime();
 
         for ( int i = 0; i < cycles; i++ ) {
             sb.append( s1 ).append( s2 ).append( s3 );
         }
 
-        afterSbConcat = System.currentTimeMillis();
-        // Formatting
-        beforeSbConcatStr = sdf.format( beforeSbConcat );
-        afterSbConcatStr = sdf.format( afterSbConcat );
+        afterSbConcat = System.nanoTime();
 
         System.out.printf( "Results for %d cycles:%n", cycles );
         System.out.println( "=========================" );
-        System.out.printf( "String concat duration: %dms%n", afterStrConcat - beforeStrConcat );
-        System.out.printf( "StringBuilder append duration: %dms%n", afterSbConcat - beforeSbConcat );
+        System.out.printf( "String concat duration: %dms%n", TimeUnit.NANOSECONDS.toMillis( afterStrConcat - beforeStrConcat ) );
+        System.out.printf( "StringBuilder append duration: %dms%n", TimeUnit.NANOSECONDS.toMillis( afterSbConcat - beforeSbConcat ) );
         System.out.printf( "String length: %d%n", out.length() );
         System.out.printf( "StringBuilder length: %d%n", sb.length() );
-        System.out.println( "Duration details:" );
-        System.out.println( "=====================" );
-        System.out.printf( "String concat: %s ... %s%n", beforeStrConcatStr, afterStrConcatStr );
-        System.out.printf( "StringBuilder append: %s ... %s%n", beforeSbConcatStr, afterSbConcatStr );
 
     }
 }
