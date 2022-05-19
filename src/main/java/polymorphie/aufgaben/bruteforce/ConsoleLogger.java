@@ -1,6 +1,5 @@
 package main.java.polymorphie.aufgaben.bruteforce;
 
-import java.io.IOException;
 import java.util.Calendar;
 
 /*
