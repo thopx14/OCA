@@ -1,5 +1,8 @@
 package main.java.polymorphie.aufgaben.bruteforce;
 
+/*
+  Es würde eigentlich 'abstract' interface dort stehen. Aber 'abstract' ist impliziet.
+ */
 public interface Loggable {
 
     /*
@@ -7,9 +10,8 @@ public interface Loggable {
      Wird eine Exception geworfen, so muss diese in der implementierenden Klasse nicht zwingend,
      mit 'throws' angegeben werden. Der aufrufende Code muss die Exception aber trotzdem behandeln!
 
-     */
-    // z.B. so:
-//    void log( Object loggingClass, String... texts ) throws Exception;
+     z.B. so: void log( Object loggingClass, String... texts ) throws Exception;
+    */
     void log( Object loggingClass, String... texts );
 
     /* default wird hier implementiert, kann aber auch von Unterklassen überschrieben werden.

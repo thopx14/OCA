@@ -6,7 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class TryWithRessources {
+public class tryWithRessources {
 
     public static void main( String[] args ) {
 
@@ -64,7 +64,7 @@ public class TryWithRessources {
             Input closed
             java.lang.ArithmeticException: / by zero
                 at main.java.exceptions.TryWithRessources.main(TryWithRessources.java:47)
-                Suppressed: java.lang.ArithmeticException: / by zero
+         --->   Suppressed: java.lang.ArithmeticException: / by zero
                     at main.java.exceptions.Output.close(TryWithRessources.java:64)
                     at main.java.exceptions.TryWithRessources.main(TryWithRessources.java:44)
              */
