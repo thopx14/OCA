@@ -1,8 +1,6 @@
 package main.java.polymorphie.interfaces.aufgaben;
 
-import java.io.BufferedReader;
 import java.util.InputMismatchException;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
