@@ -1,7 +1,5 @@
 package main.java.javaAPI;
 
-import java.util.Comparator;
-
 public class WrapperKlassen {
     public static void main( String[] args ) {
 
