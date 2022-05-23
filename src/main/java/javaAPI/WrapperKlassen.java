@@ -31,19 +31,20 @@ public class WrapperKlassen {
         /*
         Automatic AutoUnboxing
          */
-        int x = i1;         // int x = Integer.intValue();
+        int x = i1;         // int x = i1.intValue();
 
         /*
         AutoBoxing and AutoUnboxing
          */
-        // Integer objects are immutable. The below code will create a new Integer Object.
+
+        // Integer objects are immutable. The below code will create a new Integer Object (or a cashed one).
         i1++;               // i1 = i1 + 1 ==> i1 = Integer.valueOf(i1.intValue() + 1 );
 
 //        Short i2 = Short.valueOf( 12 ); cf: Int literal, needs cast to short!
         Short i2 = Short.valueOf( ( short ) 12 );
         Short i3 = 12;      // The same as above (autoboxing from compiler)
 
-//        Byte b1 = 1200; // cf: Too big for byte
+//        Byte b1 = 1200; // cf: Too big for byte (Byte by = Byte.valueOf((byte) 1200));
 
         Integer i4 = 12;
         Integer i5 = 22;
