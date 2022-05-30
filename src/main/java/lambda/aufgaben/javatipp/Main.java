@@ -40,27 +40,28 @@ public class Main {
         javaTipps.add( new JavaTipp( text5, new Topic( "Klassen" ), new Topic( "Methoden" ), new Topic( "Überschreiben" ) ) );
         javaTipps.add( new JavaTipp( text6, new Topic( "Interfaces" ), new Topic( "Sichtbarkeiten" ), new Topic( "Java 8" ) ) );
 
+        Consumer<JavaTipp> newLine = tipp -> System.out.println( tipp + "\n" );
 
         System.out.println( "***** Contains 'implements'" );
         System.out.println( "============================" );
-        searchTip2( javaTipps, tipp -> tipp.getText().contains( "implements" ), tipp -> System.out.println( tipp + "\n" ) );
+        searchTip2( javaTipps, tipp -> tipp.getText().contains( "implements" ), newLine );
         System.out.println( "***** Has exact 2 topics" );
         System.out.println( "============================" );
-        searchTip2( javaTipps, tipp -> tipp.getTopic().size() == 2, tipp -> System.out.println( tipp + "\n" ) );
+        searchTip2( javaTipps, tipp -> tipp.getTopic().size() == 2, newLine );
         System.out.println( "***** Contains 'kLaSse'" );
         System.out.println( "============================" );
-        searchTip2( javaTipps, tipp -> tipp.getText().toLowerCase().contains( "kLaSse".toLowerCase() ), tipp -> System.out.println( tipp + "\n" ) );
+        searchTip2( javaTipps, tipp -> tipp.getText().toLowerCase().contains( "kLaSse".toLowerCase() ), newLine );
         System.out.println( "***** Contains topic 'Klassen'" );
         System.out.println( "============================" );
-        searchTip2( javaTipps, tipp -> tipp.getTopic().toString().contains( "Klassen" ), tipp -> System.out.println( tipp + "\n" ) );
+        searchTip2( javaTipps, tipp -> tipp.getTopic().toString().contains( "Klassen" ), newLine );
         System.out.println( "***** Contains topic 'Klassen', but not 'Vererbung'" );
         System.out.println( "============================" );
         Predicate<JavaTipp> p1 = tipp -> tipp.getTopic().toString().contains( "Klassen" );
         Predicate<JavaTipp> p2 = tipp -> ! tipp.getTopic().toString().contains( "Vererbung" );
-        searchTip2( javaTipps, p1.and( p2 ), tipp -> System.out.println( tipp + "\n" ) );
+        searchTip2( javaTipps, p1.and( p2 ), newLine );
         System.out.println( "***** Has exact 3 topics" );
         System.out.println( "============================" );
-        searchTip2( javaTipps, tipp -> tipp.getTopic().size() == 3, tipp -> System.out.println( tipp + "\n" ) );
+        searchTip2( javaTipps, tipp -> tipp.getTopic().size() == 3, newLine );
         System.out.println( "***** Contains Text 'Konstruktor'" );
         System.out.println( "============================" );
         Predicate<JavaTipp> constructorPredicate = tipp -> {
@@ -75,7 +76,7 @@ public class Main {
             }
             return foundText;
         };
-        searchTip2( javaTipps, constructorPredicate, tipp -> System.out.println( tipp + "\n" ) );
+        searchTip2( javaTipps, constructorPredicate, newLine );
         System.out.println( "***** Contains Text 'stat'" );
         System.out.println( "============================" );
         Predicate<JavaTipp> statPredicate = tipp -> {
@@ -90,7 +91,7 @@ public class Main {
             }
             return foundText;
         };
-        searchTip2( javaTipps, statPredicate, tipp -> System.out.println( tipp + "\n" ) );
+        searchTip2( javaTipps, statPredicate, newLine );
 
     }
 
