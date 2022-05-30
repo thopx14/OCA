@@ -88,5 +88,7 @@ public class LambdaBasics {
 
         // 2 Parameter vom Typ 'Rectangle' und Rückgabe 'int'.
         Comparator<Rectangle> comparator = ( Rectangle o1, Rectangle o2 ) -> {return 0;};
+        // ... oder kürzer:
+        Comparator<Rectangle> comparator2 = ( Rectangle o1, Rectangle o2 ) -> 0;
     }
 }
