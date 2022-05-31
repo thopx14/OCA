@@ -1,5 +1,7 @@
 package main.java.strings;
 
+import main.java.nested.NestedStatic;
+
 public class Main {
 
     public static void main( String[] args ) {
@@ -13,5 +15,7 @@ public class Main {
 
         // Hier wird die Aufgabe 'String-Silben' gelöst.
         System.out.println( s.generateName( 2 ) );
+
+        NestedStatic.MyNestedClass nestedClass = new NestedStatic.MyNestedClass( "Test" );
     }
 }
