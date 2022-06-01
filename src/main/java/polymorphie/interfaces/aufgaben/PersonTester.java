@@ -83,10 +83,16 @@ public class PersonTester {
 
     }
 
-    static <T> void printArray( List<T> l, String title ) {
+//    static <T> void printArray( List<T> l, String title ) {
+//        System.out.println( title + ":" );
+//        for ( T t : l ) {
+//            System.out.println( t );
+//        }
+//    }
+
+    // Geht auch so:
+    static void printArray( List<?> l, String title ) {
         System.out.println( title + ":" );
-        for ( T t : l ) {
-            System.out.println( t );
-        }
+        l.forEach( System.out::println );
     }
 }
