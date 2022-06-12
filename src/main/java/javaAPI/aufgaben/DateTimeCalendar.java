@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
@@ -30,12 +29,7 @@ public class DateTimeCalendar {
 
             }
         }
-        try {
-            printCalendar( month, year );
-
-        } catch(IllegalArgumentException e) {
-            throw new RuntimeException(e);
-        }
+           printCalendar( month, year );
     }
 
     /*
@@ -74,25 +68,16 @@ public class DateTimeCalendar {
         System.out.println(fmt);
 
         LocalDate ld = LocalDate.of( ym.getYear(), ym.getMonth(), 1 );
-        ArrayList<LocalDate> dateList = new ArrayList<>();
-        dateList.add( ld );
 
-        while ( true ) {
-            ld = ld.plusDays( 1 );
-            // Brich bei Monatswechsel ab
-            if (! ld.getMonth().equals( ym.getMonth())) {
-                break;
-            }
-            // Falls kein Monatswechsel, so füge das neue Datum der Liste hinzu
-            dateList.add(ld);
-
-        }
-
-        for ( LocalDate localDate : dateList ) {
+        do {
             System.out.printf("%2d | %15s \t|%n",
-                    localDate.getDayOfMonth(),
-                    localDate.getDayOfWeek().getDisplayName( TextStyle.FULL, Locale.getDefault() ));
-        }
+                    ld.getDayOfMonth(),
+                    ld.getDayOfWeek().getDisplayName( TextStyle.FULL, Locale.getDefault() ));
+
+            ld = ld.plusDays( 1 );
+
+        } while(ld.getMonth().equals( ym.getMonth()));
+
         System.out.println("------------------------------------------");
     }
 }
